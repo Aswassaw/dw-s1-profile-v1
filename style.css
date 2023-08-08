@@ -88,8 +88,8 @@ body {
 }
 
 .portofolio .right .identity img {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 /* contact */

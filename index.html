@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"
+    integrity="sha512-tVYBzEItJit9HXaWTPo8vveXlkK62LbA+wez9IgzjTmFNLMBO1BEYladBw2wnM3YURZSMUyhayPCoLtjGh84NQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -51,7 +54,8 @@
         akan membentuk masa depan yang lebih cerah dan adil untuk semua warga negara.
       </p>
       <div style="margin-top: 20px; margin-bottom: 10px;">
-        <a class="download" href="#" style="text-decoration: none; font-size: 20px; color: #524A4E;">Download CV <i class="fa-solid fa-download"></i></a>
+        <a class="download" href="#" style="text-decoration: none; font-size: 20px; color: #524A4E;">Download CV <i
+            class="fa-solid fa-download"></i></a>
       </div>
       <div style="font-size: 35px; margin-top: 25px;">
         <i style="margin-right: 5px;" class="fa-brands fa-linkedin"></i>
@@ -63,13 +67,38 @@
     <div class="right">
       <div class="identity">
         <div style="box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); padding-bottom: 40px;">
-          <img src="./milos.jpg" alt="Gus Milos" width="100%">
+          <img id="photo" src="./milos.jpg" alt="Gus Milos" width="100%">
           <h2 style="margin-bottom: 10px;">Gus Milos</h2>
           <p>Calon Presiden NKRI 2024-2029</p>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    document.querySelector(".portofolio").addEventListener("click", (e) => {
+      if (e.target.className === "download") {
+        const imgName = prompt("Input nama yang anda inginkan: ")
+
+        if (imgName.trim()) {
+          const element = document.querySelector(".identity");
+          const photo = document.getElementById("photo");
+          photo.style.borderTopLeftRadius = "0"
+          photo.style.borderTopRightRadius = "0"
+
+          html2canvas(element).then(function (canvas) {
+            const a = document.createElement("a");
+            a.download = imgName + ".jpg";
+            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            a.click();
+          }).finally(() => {
+            photo.style.borderTopLeftRadius = "10px"
+            photo.style.borderTopRightRadius = "10px"
+          })
+        }
+      }
+    })
+  </script>
 </body>
 
 </html>
