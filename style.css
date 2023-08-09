@@ -177,4 +177,8 @@ body {
   .nav-links.right, .nav-links.left {
     width: 100%;
   }
+
+  .portofolio .right .identity img {
+    width: 80%;
+  }
 }
