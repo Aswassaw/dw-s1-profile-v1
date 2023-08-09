@@ -30,7 +30,7 @@
 
   <section class="contact">
     <h1 style="text-align: center; margin-top: 0px;">HUBUNGI GUS MILOS</h1>
-    <form>
+    <form action="#" onsubmit="submitData()" >
       <div class="input-container">
         <label class="label" for="name">Name</label>
         <input id="name" type="text" class="input" placeholder="Your Name">
@@ -47,11 +47,11 @@
         <label class="label" for="subject">Subject</label>
         <select class="input" id="subject">
           <option value="" hidden>Select</option>
-          <option value="dukungan">Dukungan Politik</option>
-          <option value="birokrasi">Diskusi Regulasi</option>
-          <option value="hukum">Pembelian Hukum</option>
-          <option value="peraturan">Request Undang-Undang</option>
-          <option value="makar">Lapor Pemakar</option>
+          <option value="Dukungan Politik">Dukungan Politik</option>
+          <option value="Diskusi Regulasi">Diskusi Regulasi</option>
+          <option value="Pembelian Hukum">Pembelian Hukum</option>
+          <option value="Request Undang-Undang">Request Undang-Undang</option>
+          <option value="Melaporkan Pemakar">Melaporkan Pemakar</option>
         </select>
       </div>
       <div class="input-container">
@@ -64,6 +64,8 @@
       </div>
     </form>
   </section>
+
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
