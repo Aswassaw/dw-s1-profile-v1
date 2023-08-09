@@ -2,6 +2,7 @@
 
 * {
   font-family: 'REM', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #F9F5F6;
-  padding: 10px 100px;
+  padding: 10px 60px;
 }
 
 .logo {
@@ -28,6 +29,10 @@ body {
   align-items: center;
   gap: 20px;
   list-style: none;
+}
+
+.nav-links.left, .nav-links.right {
+  padding: 0px;
 }
 
 .nav-links li a {
@@ -66,7 +71,6 @@ body {
   display: flex;
   gap: 100px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
 }
 
 .portofolio .left {
@@ -92,7 +96,7 @@ body {
   border-top-right-radius: 10px;
 }
 
-/* contact */
+/* Contact */
 .contact {
   background-color: white;
   max-width: 600px;
@@ -100,7 +104,6 @@ body {
   padding: 40px 30px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
 }
 
 .input-container {
@@ -120,7 +123,6 @@ body {
   border-radius: 5px;
   font-size: 16px;
   transition: 0.3s;
-  box-sizing: border-box;
 }
 
 .input-container .input:focus {
@@ -141,4 +143,38 @@ body {
 
 .submit-button:hover {
   background-color: #ba2b11;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portofolio {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .portofolio .right {
+    margin: 0 auto;
+  }
+
+  .navbar {
+    padding: 10px 30px;
+  }
+
+  .portofolio .left {
+    order: 2;
+  }
+
+  .portofolio .right {
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links.right, .nav-links.left {
+    width: 100%;
+  }
 }
