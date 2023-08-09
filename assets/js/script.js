@@ -18,9 +18,6 @@ function submitData() {
   }
 
   let a = document.createElement("a");
-  a.href = `mailto:${email}?subject=${subject.toUpperCase()}&body=
-  Halo, nama saya ${name}, ${message}.
-  Tolong hubungi saya pada nomor ${phone}.
-  Terima kasih.`;
+  a.href = `mailto:${email}?subject=${subject.toUpperCase()}&body=Halo, nama saya ${name}, ${message}. Tolong hubungi saya pada nomor ${phone}. Terima kasih.`;
   a.click();
 }
