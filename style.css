@@ -82,13 +82,9 @@ body {
   flex: 30%;
   margin-top: 10px;
   text-align: center;
-  width: 300px;
+  max-width: 450px;
   display: flex;
   justify-content: end;
-}
-
-.portofolio .right .identity {
-  width: 450px;
 }
 
 .portofolio .right .identity img {
@@ -178,7 +174,8 @@ body {
     width: 100%;
   }
 
-  .portofolio .right .identity img {
-    width: 80%;
+  .portofolio .right {
+    max-width: 200px;
+    justify-content: center;
   }
 }
