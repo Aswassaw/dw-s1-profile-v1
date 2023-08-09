@@ -67,12 +67,17 @@
     <div class="right">
       <div class="identity">
         <div style="box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); padding-bottom: 40px;">
-          <img id="photo" src="./assets/img/milos.jpg" alt="Gus Milos" width="100%">
+          <img id="photo" src="./assets/img/milos.jpg" alt="Gus Milos" width="100%"
+            title="Double Click For Hidden Easter Egg" style="cursor: pointer;">
           <h2 style="margin-bottom: 10px;">Gus Milos</h2>
           <p>Calon Presiden NKRI 2024-2029</p>
 
-          <audio controls style="padding: 0 20px; box-sizing: border-box;">
+          <audio id="terompetPemersatuBangsa" controls style="padding: 0 20px; box-sizing: border-box;">
             <source src="./assets/audio/terompet-pemersatu-bangsa.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <audio style="display: none;" id="alumni212" controls style="padding: 0 20px; box-sizing: border-box;">
+            <source src="./assets/audio/alumni212.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </div>
@@ -101,6 +106,16 @@
             photo.style.borderTopRightRadius = "10px"
           })
         }
+      }
+    })
+
+    document.getElementById("photo").addEventListener("dblclick", () => {
+      const audio = document.getElementById('alumni212');
+
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
       }
     })
   </script>
