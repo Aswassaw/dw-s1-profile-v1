@@ -93,7 +93,7 @@ body {
 }
 
 /* Contact */
-.contact {
+.contact, .project-form {
   background-color: white;
   max-width: 600px;
   margin: 30px auto;
@@ -126,6 +126,26 @@ body {
   border-color: #3498db;
 }
 
+.input-container .checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox-container-inner {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.input-container .checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
 .submit-button {
   background-color: #FE4E30;
   color: #fff;
@@ -141,7 +161,91 @@ body {
   background-color: #ba2b11;
 }
 
+/* My Project */
+.project-list {
+  margin: 50px 20px;
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.project-card {
+  flex-basis: calc(25% - 25px);
+  padding: 18px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-card .project-image {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.project-card .project-title {
+  margin-bottom: 4px;
+}
+
+.project-card .project-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.project-card .project-duration {
+  margin-top: 0;
+  color: rgb(132, 132, 132);
+}
+
+.project-card .project-technologies i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.project-card .project-actions {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.project-card .project-actions button {
+  background-color: #FE4E30;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.project-card .project-actions button:hover {
+  background-color: #ba2b11;
+}
+
 /* Responsive */
+@media (max-width: 1200px) {
+  .project-card {
+    flex-basis: calc(33.33% - 25px);
+  }
+}
+
+@media (max-width: 992px) {
+  .project-card {
+    flex-basis: calc(50% - 25px);
+  }
+}
+
 @media (max-width: 768px) {
   .portofolio {
     flex-direction: column;
@@ -165,6 +269,12 @@ body {
   }
 }
 
+@media (max-width: 576px) {
+  .project-card {
+    flex-basis: calc(100% - 25px);
+  }
+}
+
 @media (max-width: 480px) {
   .navbar {
     flex-direction: column;
@@ -177,5 +287,13 @@ body {
   .portofolio .right {
     max-width: 200px;
     justify-content: center;
+  }
+
+  .input-container .checkbox-container {
+    display: block;
+  }
+
+  .input-container .checkbox-container-inner {
+    margin-bottom: 5px;
   }
 }

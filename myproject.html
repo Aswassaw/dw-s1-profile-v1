@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gus Milos Project</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <ul class="nav-links left">
+      <li style="margin-right: 20px;">
+        <a href="/index.html" class="logo">
+          <img src="./assets/img/logo.png" alt="" width="60px">
+        </a>
+      </li>
+      <li><a href="/index.html">Home</a></li>
+      <li><a class="active" href="/myproject.html">My Project</a></li>
+    </ul>
+    <ul class="nav-links right">
+      <li><a class="contact-link" href="/contact.html">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <section class="project-form">
+    <h1 style="text-align: center; margin-top: 0px;">ADD MY PROJECT</h1>
+    <form id="contactForm">
+      <div class="input-container">
+        <label class="label" for="projectName">Project Name</label>
+        <input id="projectName" type="text" class="input" placeholder="Project Name">
+      </div>
+      <div class="input-container" style="display: flex; justify-content: space-between; gap: 10px;">
+        <div style="width: 100%;">
+          <label class="label" for="startDate">Start Date</label>
+          <input id="startDate" type="date" class="input" placeholder="Start Date">
+        </div>
+        <div style="width: 100%;">
+          <label class="label" for="endDate">End Date</label>
+          <input id="endDate" type="date" class="input" placeholder="End Date">
+        </div>
+      </div>
+      <div class="input-container">
+        <label class="label" for="description">Description</label>
+        <textarea id="description" cols="30" rows="10" class="input" placeholder="Project Description"
+          style="resize: none;"></textarea>
+      </div>
+      <div class="input-container">
+        <label class="label" for="technologies">Technologies</label>
+        <div class="checkbox-container">
+          <div class="checkbox-container-inner">
+            <input class="checkbox" type="checkbox" id="javascript" name="javascript" value="Javascript">
+            <label for="javascript"> Javascript</label><br>
+          </div>
+          <div class="checkbox-container-inner">
+            <input class="checkbox" type="checkbox" id="golang" name="golang" value="Golang">
+            <label for="golang"> Golang</label><br>
+          </div>
+          <div class="checkbox-container-inner">
+            <input class="checkbox" type="checkbox" id="php" name="php" value="PHP">
+            <label for="php"> PHP</label><br>
+          </div>
+          <div class="checkbox-container-inner">
+            <input class="checkbox" type="checkbox" id="java" name="java" value="Java">
+            <label for="java"> Java</label>
+          </div>
+        </div>
+      </div>
+      <div class="input-container">
+        <label class="label" for="image">Project Image</label>
+        <input id="image" type="file" class="input" placeholder="Project Image">
+      </div>
+      <div style="display: flex; justify-content: end;">
+        <button class="submit-button" type="submit">Submit</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="project-list">
+    <h1 style="text-align: center; margin-top: 0px;">MY PROJECT</h1>
+    <div class="project-card-container">
+      <h3>Maaf, belum ada Project yang ditemukan.</h3>
+    </div>
+  </section>
+
+  <script src="./assets/js/myproject.js"></script>
+</body>
+
+</html>
