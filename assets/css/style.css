@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&family=REM:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=REM:wght@400&display=swap');
 
 * {
   font-family: 'REM', sans-serif;
@@ -208,6 +208,13 @@ body {
 .project-card .project-technologies i {
   font-size: 30px;
   margin-right: 10px;
+}
+
+.project-card .project-time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  color: rgb(107, 107, 107);
 }
 
 .project-card .project-actions {

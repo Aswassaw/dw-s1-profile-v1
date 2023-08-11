@@ -44,6 +44,7 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
       php: php.checked ? php.value : null,
     },
     image,
+    createdAt: new Date(),
   };
 
   dataProject.push(project);
@@ -65,7 +66,10 @@ function renderProject() {
         }</a></h3>
         <small class="project-duration">Durasi: ${dataProject[i].startDate} - ${
       dataProject[i].endDate
-    }</small>
+    } (${dateStatus(
+      dateToSeconds(dataProject[i].endDate) -
+        dateToSeconds(dataProject[i].startDate)
+    )})</small>
         <p class="project-description">
           ${dataProject[i].description}
         </p>
@@ -91,6 +95,10 @@ function renderProject() {
               : ""
           }
         </div>
+        <div class="project-time">
+          <small>${getFullTime(new Date())}</small>
+          <small>${getDistanceTime(dataProject[i].createdAt)}</small>
+        </div>
         <div class="project-actions">
           <button>Edit</button>
           <button>Delete</button>
@@ -101,16 +109,94 @@ function renderProject() {
 }
 
 function dateToSeconds(date) {
-  return Math.floor(date.getTime() / 1000); // Menggunakan getTime() untuk mendapatkan waktu dalam milidetik, lalu dibagi 1000 untuk mendapatkan detik
+  return Math.floor(new Date(date).getTime() / 1000); // Menggunakan getTime() untuk mendapatkan waktu dalam milidetik, lalu dibagi 1000 untuk mendapatkan detik
 }
 
 function secondsToDays(seconds) {
   const secondsInADay = 86400; // Jumlah detik dalam sehari (24 jam x 60 menit x 60 detik)
-  const days = Math.floor(seconds / secondsInADay);
-  return days;
+  return Math.floor(seconds / secondsInADay);
 }
 
 function secondsToMonths(seconds) {
   const secondsInMonth = 60 * 60 * 24 * 30.44; // Rata-rata jumlah detik dalam sebulan
   return Math.floor(seconds / secondsInMonth);
 }
+
+function secondsToYears(seconds) {
+  const secondsInYear = 60 * 60 * 24 * 365.25; // Rata-rata tahun dalam detik
+  return Math.floor(seconds / secondsInYear);
+}
+
+function dateStatus(seconds) {
+  if (seconds > 60 * 60 * 24 * 365.25) {
+    return `${secondsToYears(seconds)} Tahun`;
+  } else if (seconds > 60 * 60 * 24 * 30.44) {
+    return `${secondsToMonths(seconds)} Bulan`;
+  } else {
+    return `${secondsToDays(seconds)} Hari`;
+  }
+}
+
+function getFullTime(time) {
+  let monthName = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  let date = time.getDate();
+  let monthIndex = time.getMonth();
+  let year = time.getFullYear();
+
+  let hours = time.getHours();
+  let minutes = time.getMinutes();
+
+  if (hours <= 9) {
+    hours = "0" + hours;
+  } else if (minutes <= 9) {
+    minutes = "0" + minutes;
+  }
+
+  return `${date} ${monthName[monthIndex]} ${year} ${hours}:${minutes} WIB`;
+}
+
+function getDistanceTime(time) {
+  let timeNow = new Date();
+  let timePost = time;
+
+  let distance = timeNow - timePost;
+
+  let milisecond = 1000;
+  let secondInHours = 3600;
+  let hoursInDays = 24;
+
+  let distanceDay = Math.floor(
+    distance / (milisecond * secondInHours * hoursInDays)
+  );
+  let distanceHours = Math.floor(distance / (milisecond * 60 * 60));
+  let distanceMinutes = Math.floor(distance / (milisecond * 60));
+  let distanceSecond = Math.floor(distance / milisecond);
+
+  if (distanceDay > 0) {
+    return `${distanceDay} days ago`;
+  } else if (distanceHours > 0) {
+    return `${distanceHours} hours ago`;
+  } else if (distanceMinutes > 0) {
+    return `${distanceMinutes} minutes ago`;
+  } else {
+    return `${distanceSecond} seconds ago`;
+  }
+}
+
+setInterval(function () {
+  renderProject();
+}, 1000);
