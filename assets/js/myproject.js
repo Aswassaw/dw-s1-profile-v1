@@ -99,3 +99,18 @@ function renderProject() {
     `;
   }
 }
+
+function dateToSeconds(date) {
+  return Math.floor(date.getTime() / 1000); // Menggunakan getTime() untuk mendapatkan waktu dalam milidetik, lalu dibagi 1000 untuk mendapatkan detik
+}
+
+function secondsToDays(seconds) {
+  const secondsInADay = 86400; // Jumlah detik dalam sehari (24 jam x 60 menit x 60 detik)
+  const days = Math.floor(seconds / secondsInADay);
+  return days;
+}
+
+function secondsToMonths(seconds) {
+  const secondsInMonth = 60 * 60 * 24 * 30.44; // Rata-rata jumlah detik dalam sebulan
+  return Math.floor(seconds / secondsInMonth);
+}
