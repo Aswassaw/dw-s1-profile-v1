@@ -1,3 +1,4 @@
+let after = false;
 const dataProject = [];
 
 document.getElementById("contactForm").addEventListener("submit", (e) => {
@@ -49,7 +50,15 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
 
   dataProject.push(project);
 
-  renderProject();
+  if (after) {
+    renderProject();
+  } else {
+    after = true;
+    setInterval(function () {
+      renderProject();
+    }, 1000);
+    renderProject();
+  }
 });
 
 function renderProject() {
@@ -196,7 +205,3 @@ function getDistanceTime(time) {
     return `${distanceSecond} seconds ago`;
   }
 }
-
-setInterval(function () {
-  renderProject();
-}, 1000);
