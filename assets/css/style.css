@@ -253,14 +253,15 @@ body {
 .project-detail .top {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .project-detail .top .project-image {
-  flex-basis: 60%;
+  flex-basis: calc(60% - 20px);
 }
 
 .project-detail .top .project-attr {
-  flex-basis: 40%;
+  flex-basis: calc(40% - 20px);
 }
 
 .project-detail .top .project-attr .project-technologies {
@@ -317,6 +318,14 @@ body {
 
   .portofolio .right {
     order: 1;
+  }
+
+  .project-detail .top .project-image {
+    flex-basis: 100%;
+  }
+
+  .project-detail .top .project-attr {
+    flex-basis: 100%;
   }
 
   .project-detail .top .project-attr .project-technologies div {
