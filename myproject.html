@@ -20,13 +20,26 @@
           <img src="./assets/img/logo.png" alt="" width="60px">
         </a>
       </li>
-      <li><a href="/index.html">Home</a></li>
-      <li><a class="active" href="/myproject.html">My Project</a></li>
+      <li><a class="item-collapse" href="/index.html">Home</a></li>
+      <li><a class="item-collapse active" href="/myproject.html">My Project</a></li>
     </ul>
-    <ul class="nav-links right">
+    <ul class="nav-links right item-collapse">
       <li><a class="contact-link" href="/contact.html">Contact Me</a></li>
     </ul>
+    <ul class="nav-links right" id="barsmenu">
+      <li>
+        <button style="background-color: transparent; border: none; cursor: pointer" onclick="openHamburger();">
+          <i class="fa-2x fa-solid fa-bars"></i>
+        </button>
+      </li>
+    </ul>
   </nav>
+
+  <div class="hamburger-nav-container" id="hamburger-nav-container">
+    <a href="/index.html">Home</a>
+    <a href="/myproject.html" class="hamburger-active">My Project</a>
+    <a href="/contact.html">Contact Me</a>
+  </div>
 
   <section class="project-form">
     <h1 style="text-align: center; margin-top: 0px;">ADD MY PROJECT</h1>
@@ -213,6 +226,7 @@
     </div>
   </section>
 
+  <script src="./assets/js/index.js"></script>
   <script src="./assets/js/myproject.js"></script>
 </body>
 

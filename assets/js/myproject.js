@@ -14,10 +14,15 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
   let java = document.getElementById("java");
   let image = document.getElementById("image").files;
 
+  console.log(dateToSeconds(new Date(startDate)));
+  console.log(dateToSeconds(new Date(endDate)));
+
   if (projectName == "") {
     return alert("Project Name diperlukan!");
   } else if (startDate == "" || endDate == "") {
     return alert("Start Date & End Date diperlukan!");
+  } else if(dateToSeconds(new Date(startDate)) > dateToSeconds(new Date(endDate))) {
+    return alert("Start Date tidak boleh lebih besar dari End Date!");
   } else if (description == "") {
     return alert("Description diperlukan!");
   } else if (
