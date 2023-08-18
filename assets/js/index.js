@@ -17,7 +17,7 @@ window.addEventListener("resize", () => {
     document.documentElement.clientWidth ||
     document.body.clientWidth;
 
-  if (lebarLayar > 576) {
+  if (lebarLayar > 650) {
     hamburgerNavContainer.style.display = "none";
     hamburgerIsOpen = false;
   }
