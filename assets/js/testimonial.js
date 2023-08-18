@@ -40,7 +40,7 @@ const testimonialData = [
     rating: 4,
   },
   {
-    author: "Dharc the Dark Charmer, Umbral",
+    author: "Dharc the Dark Charmer, Gloomy",
     message:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat cupiditate ipsum, vitae asperiores reiciendis fuga.",
     image:
