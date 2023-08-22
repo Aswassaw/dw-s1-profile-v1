@@ -4,16 +4,16 @@ let testimonialData = [];
 const fetchTestimonial = new Promise((resolve, reject) => {
   const xhr = new XMLHttpRequest();
 
-  xhr.open("GET", "https://api.npoint.io/a06208748f8723eb6c9b", true);
+  xhr.open("GET", "https://api.npoint.io/a06208748f872s3eb6c9b", true);
   xhr.onload = function () {
     if (xhr.status == 200) {
       resolve(JSON.parse(xhr.response));
     } else {
-      reject("Terjadi masalah saat sedang mengambil data!");
+      reject(new Error("Terjadi masalah saat sedang mengambil data!"));
     }
   };
   xhr.onerror = function () {
-    reject("Network Error");
+    reject(new Error("Network Error"));
   };
 
   xhr.send();
